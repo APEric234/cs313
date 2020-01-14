@@ -1,0 +1,15 @@
+.a1 {
+  background-color: powderblue;
+  font-size: 20;
+}
+.a2 {
+  background-color: royalblue;
+  font-size: 30;
+}
+.a3 {
+  background-color: blueviolet;
+  font-size: 40;
+}
+div:hover{
+  font-weight: bold;
+}
