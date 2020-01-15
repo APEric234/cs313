@@ -15,7 +15,7 @@ $(function(){
     $(".visibility").html( "Make third div invisible!")
     b=1
   }else{
-  if (b =0 ){
+  if (b == 0 ){
     $('.a3').fadeOut(2500)
     $(".visibility").html( "Make third div visible!")
   }
