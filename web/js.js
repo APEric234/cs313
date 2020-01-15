@@ -4,7 +4,7 @@ $(function(){
 });
 
   $(".color").click(function(){
-  $('.a1').css("background-color", "purple")
+  $('.a1').css("background-color", $(".colorInput").val())
 });
 
 
