@@ -1,10 +1,10 @@
 $(function(){
   $(".click").click(function(){
-  $(this).innerHTML = "Clicked!";
+    $(".click").html( "Clicked!");
 });
 
   $(".color").click(function(){
-  $('.a1').css("background-color", $('.colorInput').innerHtml)
+  $('.a1').css("background-color", $('.colorInput').html())
 });
 
 
