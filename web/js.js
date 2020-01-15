@@ -9,7 +9,12 @@ $(function(){
 
 
   $(".visibility").click(function(){
+  if($('.a3').css('display')){
+    $('.a3').fadeIn(2500)
+    $(".visibility").html( "Make third div invisible!")
+  }
   $('.a3').fadeOut(2500)
+  $(".visibility").html( "Make third div visible!")
 });
 
 });
