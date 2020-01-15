@@ -10,6 +10,9 @@
   background-color: blueviolet;
   font-size: 40;
 }
+.container{
+  align-content: center
+}
 div:hover{
   font-weight: bold;
 }
