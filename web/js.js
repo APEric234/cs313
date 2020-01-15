@@ -10,11 +10,11 @@ $(function(){
 
   $(".visibility").click(function(){
   if($('.a3').is(":visible")){
-    $(this).alert("is visible")
+    window.alert("is visible")
     $('.a3').fadeIn(2500)
     $(".visibility").html( "Make third div invisible!")
   }else{
-    $(this).alert("isn't visible")
+    window.alert("isn't visible")
     $('.a3').fadeOut(2500)
     $(".visibility").html( "Make third div visible!")
   
