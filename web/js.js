@@ -10,7 +10,6 @@ $(function(){
 
   $(".visibility").click(function(){
   $('.a3').fadeOut(2500)
-  $('.a3').fadeIn(2500)
 });
 
 });
