@@ -1,8 +1,8 @@
 $(function(){
   $(".dice").click(function(){
-    
-   if ("20" == $(".colorInput").val()){
-    $(".colorInput").innerhtml = "Right answer"
+    a="20"
+   if (a == $(".diceIn").val()){
+     $(".diceIn").val("Right Answer");
    }
 
   
