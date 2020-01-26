@@ -6,9 +6,9 @@
 
 <?php
 
+$a = 1
 
-
-echo "<p>Hello World your item costs </p>" ?>
+echo "<p>Hello World your item costs $a </p>" ?>
 
 <form action="" method="post">
     Name:  <input type="text" name="personal[name]" /><br />
