@@ -7,14 +7,14 @@ session_start();
 <body>
 
 <h1>Products</h1>
-=
+
 <?php
-$colors = array("red", "green", "blue", "yellow");
+$colors = array("red paint", "green paint", "blue paint", "yellow paint");
 
 foreach ($colors as $value) {
   $class=$value;
   echo "$value <br>";
-  echo "<button class=\"$class\">Buy</button>";
+  echo "<button class=\"$class\">Buy</button><br>";
 }
 ?>
 
