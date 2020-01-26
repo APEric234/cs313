@@ -12,9 +12,8 @@ session_start();
 $_SESSION["favcolor"] = "green paint";
 $a = $_SESSION["favcolor"];
 $b=array($_SESSION["favcolor"],"yellow paint");
-$d = array("0");
 foreach ($b as $c){
-    echo ("<p>$c costs \$1 <button class="$c">Buy</button></p>");
+    echo ("<p>$c costs 1 <button class="$c">Buy</button></p>");
 
 }?>
 
