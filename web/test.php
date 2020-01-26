@@ -5,19 +5,10 @@
 <h1>My first PHP page</h1>
 
 <?php
-class Item {
-    public function _construct($price,$name) {
-        echo ("item with price \$($price) and name ($name)")
-        $this->price = $price;
-        $this->name = $name;
-    };
-    public function getPrice(){
-        return $this->price;
-    };
-};
 
 
-echo ("<p>Hello World your item costs </p>") ?>
+
+echo "<p>Hello World your item costs </p>" ?>
 
 <form action="" method="post">
     Name:  <input type="text" name="personal[name]" /><br />
