@@ -5,6 +5,7 @@
 <body>
 
 <h1>Cart</h1>
+<p> Please select how many gallons of paint you wish to by select 0 if color isn't required</p>
 <form action="shipping.php" method="post">
     You have Red Paint: <input type="number" name="red" value = "<?php echo $_POST["red"];?>" required><br>
     
