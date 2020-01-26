@@ -12,7 +12,8 @@ session_start();
 $colors = array("red", "green", "blue", "yellow");
 
 foreach ($colors as $value) {
-  echo "$value <br><button class="$value">Buy</button>;
+  $class=$value
+  echo "$value <br><button class="$class">Buy</button>;
 }
 ?>
 
