@@ -9,10 +9,10 @@ session_start();
 <h1>My first PHP page</h1>
 
 <?php
-
+$_SESSION["favcolor"] = "green";
 $a = 1;
 
-echo ("<p>Hello World your item costs $a </p>"); ?>
+echo ('<p>Hello World your item costs $_SESSION["favcolor"] </p>'); ?>
 
 <form action="" method="post">
     Name:  <input type="text" name="personal[name]" /><br />
