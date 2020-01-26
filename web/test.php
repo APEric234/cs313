@@ -6,7 +6,7 @@
 
 <?php
 
-$a = 1
+$a = 1;
 
 echo "<p>Hello World your item costs $a </p>" ?>
 
