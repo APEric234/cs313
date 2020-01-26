@@ -10,17 +10,17 @@
  if ($red > 0){
   echo "<p>You ordered $red gallons of red paint</p>";
 }?>
-<?php $red=$_POST["green"];
+<?php $green=$_POST["green"];
 if ($red > 0){
-  echo "<p>You ordered $red gallons of green paint</p>";
+  echo "<p>You ordered $green gallons of green paint</p>";
 }?>
-<?php $red=$_POST["blue"];
+<?php $blue=$_POST["blue"];
 if ($red > 0){
-  echo "<p>You ordered $red gallons of blue paint</p>";
+  echo "<p>You ordered $blue gallons of blue paint</p>";
 }?>
-<?php $red=$_POST["yellow"];
+<?php $yellow=$_POST["yellow"];
 if ($red > 0){
-  echo "<p>You ordered $red gallons of yellow paint</p>";
+  echo "<p>You ordered $yellow gallons of yellow paint</p>";
 }?> --> 
     <P> We will ship your order to <?php 
     echo htmlspecialchars($_POST["address"])
