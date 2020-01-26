@@ -9,13 +9,12 @@ session_start();
 <h1>Products</h1>
 
 <?php
-$_SESSION["favcolor"] = "green paint";
-$a = $_SESSION["favcolor"];
-$b=array($_SESSION["favcolor"],"yellow paint");
-foreach ($b as $c){
-    echo ("<p>$c costs 1 <button class="$c">Buy</button></p>");
+$colors = array("red", "green", "blue", "yellow");
 
-}?>
+foreach ($colors as $value) {
+  echo "$value <br>";
+}
+?>
 
 
 </body>
