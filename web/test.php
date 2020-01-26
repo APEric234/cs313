@@ -17,7 +17,7 @@ class Item {
 };
 
 
-echo ("<p>Hello World your item costs </p>" ?>
+echo ("<p>Hello World your item costs </p>") ?>
 
 <form action="" method="post">
     Name:  <input type="text" name="personal[name]" /><br />
