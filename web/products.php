@@ -8,9 +8,9 @@
 <form action="products.php" method="post">
     You have Red Paint: <input type="number" name="red" value = "<?php echo $_POST["red"];?>" required><br>
     
-    You have Red Paint: <input type="number" name="red" value = "<?php echo $_POST["green"];?>" required><br>
-    You have Red Paint: <input type="number" name="red" value = "<?php echo $_POST["blue"];?>" required><br>
-    You have Red Paint: <input type="number" name="red" value = "<?php echo $_POST["yellow"];?>" required><br>
+    You have Green Paint: <input type="number" name="red" value = "<?php echo $_POST["green"];?>" required><br>
+    You have Blue Paint: <input type="number" name="red" value = "<?php echo $_POST["blue"];?>" required><br>
+    You have Yellow Paint: <input type="number" name="red" value = "<?php echo $_POST["yellow"];?>" required><br>
     <p>Push submit to confirm your cart</p>
 </body>
 </html>
