@@ -10,9 +10,9 @@ session_start();
 
 <?php
 $_SESSION["favcolor"] = "green";
-$a = 1;
+$a = $_SESSION["favcolor"];
 
-echo ('<p>Hello World your item costs $_SESSION["favcolor"] </p>'); ?>
+echo ("<p>Hello World your item costs $a </p>"); ?>
 
 <form action="" method="post">
     Name:  <input type="text" name="personal[name]" /><br />
