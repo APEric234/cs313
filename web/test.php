@@ -8,7 +8,7 @@
 
 $a = 1;
 
-echo "<p>Hello World your item costs $a </p>" ?>
+echo ("<p>Hello World your item costs $a </p>"); ?>
 
 <form action="" method="post">
     Name:  <input type="text" name="personal[name]" /><br />
