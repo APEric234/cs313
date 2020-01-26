@@ -13,7 +13,8 @@ $_SESSION["favcolor"] = "green";
 $a = $_SESSION["favcolor"];
 $b=array($_SESSION["favcolor"],"yellow");
 foreach ($b as $c){
-echo ("<p>Hello World your item costs $c </p>"); }?>
+echo ("<p>Hello World your item costs $c </p>"); 
+}?>
 
 <form action="" method="post">
     Name:  <input type="text" name="personal[name]" /><br />
