@@ -4,7 +4,7 @@
 <script src="cart.js"></script>
 <body>
 
-<h1>Cart</h1>
+<h1>Shipping</h1>
 <form action="confirm.php" method="post">
     You are ordering Red Paint: <input type="number" name="red" value = "<?php echo $_POST["red"];?>" readonly><br>
     
