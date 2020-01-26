@@ -13,7 +13,7 @@ $colors = array("red", "green", "blue", "yellow");
 
 foreach ($colors as $value) {
   $class=$value
-  echo "$value <br><button class="$class">Buy</button>;
+  echo "$value <br><button class=\"$class\">Buy</button>";
 }
 ?>
 
