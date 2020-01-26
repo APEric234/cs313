@@ -1,23 +1,17 @@
-<?php
-// Start the session
-session_start();
-?>
-<!DOCTYPE html> 
+
 <html>
 <body>
 
-<h1>Products</h1>
+<h1>Cart</h1>
 
-<?php
-$colors = array("red paint", "green paint", "blue paint", "yellow paint");
+You have purchased <?php $_POST["green"];?> green paint <br>
 
-foreach ($colors as $value) {
-  $class=$value;
-  echo "$value <br>";
-  echo "<button class=\"$class\">Buy</button><br>";
-}
-?>
+You have purchased <?php $_POST["blue"];?> green paint <br>
 
+You have purchased <?php $_POST["red"];?> green paint <br>
+
+You have purchased <?php $_POST["yellow"];?> green paint <br>
+<h2>Cart </h2>
 
 </body>
 </html>
