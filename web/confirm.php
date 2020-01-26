@@ -6,19 +6,19 @@
 
 <h1>Cart</h1>
 <?php $red=$_POST["red"];
-if $red > 0{
+if ($red > 0){
   echo "<p>You ordered $red gallons of red paint</p>";
 }?>
 <?php $red=$_POST["green"];
-if $red > 0{
+if ($red > 0){
   echo "<p>You ordered $red gallons of green paint</p>";
 }?>
 <?php $red=$_POST["blue"];
-if $red > 0{
+if ($red > 0){
   echo "<p>You ordered $red gallons of blue paint</p>";
 }?>
 <?php $red=$_POST["yellow"];
-if $red > 0{
+if ($red > 0){
   echo "<p>You ordered $red gallons of yellow paint</p>";
 }?>
     <P> We will ship your order too <?php 
