@@ -15,10 +15,9 @@ class Item {
         return $this->price;
     };
 };
-$a = Item(1,'camera');
-$price=$a.getPrice();
 
-echo ("<p>Hello World your item costs ($a.getPrice()) </p>" ?>
+
+echo ("<p>Hello World your item costs </p>" ?>
 
 <form action="" method="post">
     Name:  <input type="text" name="personal[name]" /><br />
