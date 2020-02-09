@@ -17,13 +17,13 @@
 <?php 
 $conn = pg_pconnect("dbname=dergo389khd0pd");
 if (!$conn) {
-    echo "An error occurred.\n";
+    echo "An error occurred. here\n";
     exit;
 }
 
 $result = pg_query($conn, "SELECT * FROM equipment");
 if (!$result) {
-    echo "An error occurred.\n";
+    echo "An error occurred. 2 here\n";
     exit;
 }
 
