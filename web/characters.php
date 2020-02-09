@@ -10,8 +10,8 @@
 <?php 
 require('db.php');
 $db = get_db()
-#$query = 'select fname from characters'
-#$stmnt = $db->prepare($query);
+$query = 'select fname from characters'
+$stmnt = $db->prepare($query);
 #$names = $stmnt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <html>
