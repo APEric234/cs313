@@ -22,10 +22,8 @@ $dbPort = $dbOpts["port"];
 $dbUser = $dbOpts["user"];
 $dbPassword = $dbOpts["pass"];
 $dbName = ltrim($dbOpts["path"],'/');
-echo "<h2> $dbName is </h2>";
-$conn_string = $db_connection = pg_connect(
-  "host=localhost port=5432 dbname=dergo389khd0pd"
-);
+$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+echo "<h2> $db is </h2>";
 ?>
 <h1>Order Confirmation</h1>
 </body>
