@@ -8,7 +8,7 @@
 <h1>Order Confirmation</h1>
 
 <?php 
-require('dbConnect.php');
+require('db.php');
 $db = get_db()
 $query = 'select fname from characters'
 $stmnt = $db->prepare($query);
