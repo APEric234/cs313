@@ -3,7 +3,7 @@
 <html>
 <body>
 
-<h1>Order Confirmation</h1>
+<h1>Characters enter the field</h1>
 
 
 <?php 
@@ -33,11 +33,6 @@ $stmnt = $db->query($query);
 $stmnt -> execute();
 $names = $stmnt->fetchAll();
 
-?>
-
-
-
-<?php 
 foreach ($names as $name){
   $namep=$name['fname'];
   echo("<p>The Epic <b>$namep</b> has entered the game </p>");
