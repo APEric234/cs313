@@ -23,7 +23,9 @@ $dbUser = $dbOpts["user"];
 $dbPassword = $dbOpts["pass"];
 $dbName = ltrim($dbOpts["path"],'/');
 $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-echo "<h2> $db is </h2>";
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
 ?>
 <h1>Order Confirmation</h1>
 </body>
