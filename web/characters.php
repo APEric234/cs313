@@ -14,17 +14,12 @@
 <body>
 <?php 
 $db_url = getenv('DATABSE_URL');
-echo "<h2> $db_url is </h2>"
+echo "<h2> $db_url is </h2>";
 $conn_string = $db_connection = pg_connect(
   "host=localhost port=5432 dbname=dergo389khd0pd"
 );
 ?>
 <h1>Order Confirmation</h1>
-
-
-    <P> We will ship your order to <?php 
-    echo htmlspecialchars($_POST["address"])
-    ?></p>
 </body>
 </html>
 
