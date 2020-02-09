@@ -13,8 +13,16 @@
 <script src="cart.js"></script>
 <body>
 <?php 
-$db_url = getenv('DATABASE_URL');
-echo "<h2> $db_url is </h2>";
+
+
+$dbUrl = getenv('DATABASE_URL');
+$dbOpts = parse_url($dbUrl);
+$dbHost = $dbOpts["host"];
+$dbPort = $dbOpts["port"];
+$dbUser = $dbOpts["user"];
+$dbPassword = $dbOpts["pass"];
+$dbName = ltrim($dbOpts["path"],'/');
+echo "<h2> $dbName is </h2>";
 $conn_string = $db_connection = pg_connect(
   "host=localhost port=5432 dbname=dergo389khd0pd"
 );
