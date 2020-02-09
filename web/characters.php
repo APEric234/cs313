@@ -15,7 +15,9 @@
 <h1>Order Confirmation</h1>
 
 <?php 
-$conn_string = "host=ec2-184-72-236-3.compute-1.amazonaws.com database=dergo389khd0pd user=kxgzangzhzkpdm port=5432"
+$conn_string = $db_connection = pg_connect(
+  "host=ec2-184-72-236-3.compute-1.amazonaws.com dbname=dergo389khd0pd user=kxgzangzhzkpdm password=c29f98a332d055f61fc092dbfef16a865ee78b843444b8846dfc3d60fb1c19f4"
+);
 $conn = pg_pconnect($conn_string);
 if (!$conn) {
     echo "An error occurred. here\n";
