@@ -31,7 +31,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $db = get_db()
 $query = 'select fname from characters;'
-$stmnt = $db->prepare($query);
+#$stmnt = $db->prepare($query);
 #$names = $stmnt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <html>
