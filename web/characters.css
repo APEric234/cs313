@@ -23,15 +23,18 @@ label{
   width: 10%;
 }
 form{
+  display: flex;
   width:400px; 
   margin: 0 auto;
   align-self: left;
   list-style-type: square;
 }
 h1{
+  display: flex;
   align-self:center;
 }
 ul {
+  display: flex;
   width:400px; 
   margin: 0 auto;
   align-self: left;
