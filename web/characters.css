@@ -30,7 +30,7 @@ label{
 
 h1{
   display: flex;
-  align-self:center;
+  align-items:center;
 }
 ul {
   display: flex;
