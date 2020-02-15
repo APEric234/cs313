@@ -16,3 +16,7 @@ ul {
   align-items: center;
   list-style-type: square;
 }
+
+*{
+  color:red;
+}
