@@ -26,13 +26,13 @@ label{
   width: 10%;
 }
 form{
-  width:100px; 
+  width:400px; 
   margin: 0 auto;
   align-items: right;
   list-style-type: square;
 }
 ul {
-  width:100px; 
+  width:400px; 
   margin: 0 auto;
   align-items: left;
   list-style-type: square;
