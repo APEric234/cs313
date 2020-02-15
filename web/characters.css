@@ -31,6 +31,9 @@ form{
   align-items: right;
   list-style-type: square;
 }
+h1{
+  align:center;
+}
 ul {
   width:400px; 
   margin: 0 auto;
