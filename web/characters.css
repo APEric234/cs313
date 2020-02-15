@@ -29,9 +29,13 @@ h1{
 }
 ul {
   display: flex;
-  width:20%;
-  align-self: left;
+  justify-content: center;
+  align-items: left;
   list-style-type: square;
+}
+li{
+  widows:20%;
+  height:10%
 }
 
 *{
