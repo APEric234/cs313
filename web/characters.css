@@ -1,4 +1,5 @@
 .hero {
+  flex-basis: 100%;
   display: flex;
   background-color: royalblue;
   font-size: 30;
