@@ -20,7 +20,7 @@ $query = 'select * from characters;';
 $stmnt = $db->query($query);
 $stmnt -> execute();
 $names = $stmnt->fetchAll();
-echo("<ul>")
+echo("<ul>");
 foreach ($names as $name){
   $namep=$name['fname'];
   echo("<li class='hero'>The Epic <b>$namep</b> has entered the game </li>");
