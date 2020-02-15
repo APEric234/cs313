@@ -21,9 +21,9 @@ label{
 form{
   width:100px; 
   margin: 0 auto;
-  align-items: left;
+  align-items: right;
   list-style-type: square;
-}l
+}
 ul {
   width:100px; 
   margin: 0 auto;
