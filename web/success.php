@@ -3,6 +3,7 @@ require_once('db.php')
 ?>
 
 <?php
+    $db=get_db();
     $id=rand(0,1000);
     
     $query = "select Character_id from characters where Character_id = $id;";
