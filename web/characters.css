@@ -1,9 +1,11 @@
 .hero {
+  display: flex;
   background-color: royalblue;
   font-size: 30;
 }
 
 ul {
+  display: flex;
   align-items: center;
   list-style-type: square;
   margin: 0;
