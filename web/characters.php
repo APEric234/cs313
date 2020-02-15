@@ -28,7 +28,7 @@ foreach ($names as $name){
 
 <?php
   if(isset($_POST['addCharacter'])) { 
-    $id=rand(0,1000)
+    $id=rand(0,1000);
     
     $query = "select Character_id from characters where Character_id = $id;";
 
@@ -38,7 +38,7 @@ foreach ($names as $name){
     $id_duplicate = $stmnt->fetchAll(); 
     while(len($id_duplicate) > 0){
       //note to self this will infinite loop once all 1000 are made need to fix later
-      $id=rand()
+      $id=rand();
       
       $query = "select Character_id from characters where Character_id = $id;";
 
@@ -55,13 +55,13 @@ foreach ($names as $name){
       $stmnt -> execute();
       $id_duplicate = $stmnt->fetchAll();
 
-      $name=$_POST['name']
+      $name=$_POST['name'];
       
-      $agility=$_POST['agil']
-      $strength=$_POST['stre']
-      $wisdom=$_POST['wisd']
-      $intel=$_POST['intel']
-      $grace=$_POST['grace']
+      $agility=$_POST['agil'];
+      $strength=$_POST['stre'];
+      $wisdom=$_POST['wisd'];
+      $intel=$_POST['intel'];
+      $grace=$_POST['grace'];
 
       $query2 = "insert  into characters (Character_id,Fname,Users_id,Agil,Stre,Wisd,Intel,Grace) Values($id,$agility,$strength,$wisdom,$intel,$grace);";
       header("Location: success.php");
