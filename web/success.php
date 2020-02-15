@@ -44,7 +44,7 @@ require_once('db.php')
       $intel=$_POST['intel'];
       $grace=$_POST['grace'];
 
-      $query2 = "insert  into characters (Character_id,Fname,Users_id,Agil,Stre,Wisd,Intel,Grace) Values($id,\"$name\",$users_id,$agility,$strength,$wisdom,$intel,$grace);";
+      $query2 = "insert  into characters (Character_id,Fname,Users_id,Agil,Stre,Wisd,Intel,Grace) Values($id,'$name',$users_id,$agility,$strength,$wisdom,$intel,$grace);";
       $stmnt = $db->query($query2);
       $stmnt -> execute();
       echo "
