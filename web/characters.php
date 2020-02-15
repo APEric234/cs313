@@ -30,7 +30,7 @@ foreach ($names as $name){
 </ul>
 
 
-<p>Does anyone new enter the field?</p>
+<p class="stats">Does anyone new enter the field?</p>
 <form method="post" action="success.php">
     <label for="name">Name:</label>
     <input type="text" name="name" id="name" value = "" required>

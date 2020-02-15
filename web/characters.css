@@ -10,10 +10,17 @@ html {
   background-color: gold;
   background-image:url("images/arthur-20clip-20art-dragon-2.png");
 }
+
+
 p {
   display: flex;
   align-items: left;
 }
+.stats
+  {
+    display: flex;
+    align-items: right;
+  }
 label{
   display: inline-block; 
   width: 10%;
