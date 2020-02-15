@@ -32,7 +32,6 @@ require_once('db.php')
       try{
       $query2 = "insert  into users (User_id,Fname,Email) Values($id,'$name','$email');";
       $stmnt = $db->query($query2);
-      $stmnt -> execute();
       echo "
         <html><body>
         <b> Your have been added as a user your id is $id please remember this so you can add a character later<b>
