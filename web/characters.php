@@ -23,7 +23,7 @@ $names = $stmnt->fetchAll();
 foreach ($names as $name){
   $namep=$name['fname'];
   echo("<li class='hero'>The Epic 
-    <b>$namep</b> has entered the game </li><br/>");
+    <b>$namep</b> has entered the game </li><br/><br/>");
 }
 
 ?>
