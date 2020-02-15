@@ -10,7 +10,7 @@ require_once('db.php')
 
 <h1>Characters enter the field</h1>
 
-
+<ul>
 <?php
 $db = get_db();
 
@@ -20,15 +20,13 @@ $query = 'select * from characters;';
 $stmnt = $db->query($query);
 $stmnt -> execute();
 $names = $stmnt->fetchAll();
-echo("<ul>");
 foreach ($names as $name){
   $namep=$name['fname'];
   echo("<li class='hero'>The Epic <b>$namep</b> has entered the game </li>");
 }
-echo("<\ul>");
 
 ?>
-
+</ul>
 
 
 <p>Does anyone new enter the field?</p>
