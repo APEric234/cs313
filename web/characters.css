@@ -29,8 +29,7 @@ h1{
 }
 ul {
   display: flex;
-  width:20%; 
-  margin: 0 auto;
+  width:20%;
   align-self: left;
   list-style-type: square;
 }
