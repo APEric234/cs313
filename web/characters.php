@@ -34,7 +34,7 @@ foreach ($names as $name){
 <form method="post" action="success.php">
     <label for="name">Name:</label>
     <input type="text" name="name" id="name" value = "" required><br>
-    <label for="name">Users Id:</label>
+    <label for="users_id">Users Id:</label>
     <input type="number" name="users_id" id="users_id" value = "" required><br>
     <label for="agil">Agility:</label>
     <input type="number" id="agil" name="agil" min="0" max="18" step="1" value="10">
