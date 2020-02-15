@@ -17,6 +17,8 @@ p {
   align-items: left;
 }
 ul {
+  width:300px; 
+  margin: 0 auto;
   display: flex;
   align-items: center;
   list-style-type: square;
