@@ -47,6 +47,7 @@ foreach ($names as $name){
     <input type="number" id="intel" name="intel" min="0" max="18" step="1" value="10">
     <label for="grace">Grace:</label>
     <input type="number" id="grace" name="grace" min="0" max="18" step="1" value="10">
+    </br>
     <input type="submit" name="addCharacter" id="addCharacter">
 </body>
 </html>
