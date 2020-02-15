@@ -23,8 +23,12 @@ require_once('db.php')
       $stmnt -> execute();
       $id_duplicate = $stmnt->fetchAll(); 
     }
+
     $users_id=$_post['users_id'];
-    $query = "select User_id from characters where User_id = $id;";
+    $query = "select User_id from users where User_id = $users_id;";
+    $stmnt = $db->query($query);
+    $stmnt -> execute();
+    $id_duplicate = $stmnt->fetchAll(); 
     if(len($id_duplicate) == 1){
 
       $stmnt = $db->query($query);
