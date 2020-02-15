@@ -3,11 +3,12 @@
   background-color: royalblue;
   font-size: 30;
 }
-
+p {
+  display: flex;
+  align-items: left;
+}
 ul {
   display: flex;
   align-items: center;
   list-style-type: square;
-  margin: 0;
-  padding: 0;
 }
