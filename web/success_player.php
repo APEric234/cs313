@@ -40,7 +40,7 @@ require_once('db.php')
 
         </body></html>
       ");
-      }catch{
+      }catch(Exception $e){
         echo("
         <html><body>
         <b> Your have already added as a user please refresh the page<b>
