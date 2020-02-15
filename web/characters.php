@@ -3,6 +3,7 @@
 require_once('db.php')
 ?>
 <html>
+<link rel="stylesheet" href="characters.css">
 <body>
 
 <h1>Characters enter the field</h1>
@@ -17,10 +18,10 @@ $query = 'select * from characters;';
 $stmnt = $db->query($query);
 $stmnt -> execute();
 $names = $stmnt->fetchAll();
-
+echo("<ul>")
 foreach ($names as $name){
   $namep=$name['fname'];
-  echo("<p class='hero'>The Epic <b>$namep</b> has entered the game </p>");
+  echo("<li class='hero'>The Epic <b>$namep</b> has entered the game </li>");
 }
 
 
