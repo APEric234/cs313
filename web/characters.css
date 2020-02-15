@@ -50,7 +50,9 @@ li{
   widows:20%;
   height:10%;
 }
-
+footer{
+  vertical-align: right;
+}
 *{
   color:red;
   font-size: 12px;
