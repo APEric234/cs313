@@ -3,7 +3,9 @@
 require_once('db.php')
 ?>
 <html>
+  <head>
 <link rel="stylesheet" href="characters.css">
+</head>
 <body>
 
 <h1>Characters enter the field</h1>
