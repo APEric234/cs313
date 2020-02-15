@@ -33,13 +33,13 @@ require_once('db.php')
       $query2 = "insert  into users (User_id,Fname,Email) Values($id,'$name','$email');";
       $stmnt = $db->query($query2);
       $stmnt -> execute();
-      echo("
+      echo "
         <html><body>
         <b> Your have been added as a user your id is $id please remember this so you can add a character later<b>
         <a href=\"characters.php\"> Click here to go and get a hero added for your user!</a>
 
         </body></html>
-      ");
+      ";
       }catch(Exception $e){
         print($e);
         echo("

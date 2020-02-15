@@ -47,22 +47,22 @@ require_once('db.php')
       $query2 = "insert  into characters (Character_id,Fname,Users_id,Agil,Stre,Wisd,Intel,Grace) Values($id,'$name',$users_id,$agility,$strength,$wisdom,$intel,$grace);";
       $stmnt = $db->query($query2);
       $stmnt -> execute();
-      echo("
+      echo "
         <html><body>
         <b> Your hero $name has been added to the list of characters succesfully!<b>
         <a href=\"characters.php\"> Click here to go back and see him on the list of hero's!</a>
   
         </body></html>
-      ");
+      " ;
     }
     else{
-      echo("
+      echo "
         <html><body>
         <b> Your hero $name couldn't be added to the list of characters due to an error with the user_id you gave<b>
         <a href=\"characters.php\"> Click here to go back and try again</a>
       
         </body></html>
-        ");
+        " ;
     }
    
   
