@@ -30,7 +30,7 @@ require_once('db.php')
     $stmnt = $db->query($query);
     $stmnt -> execute();
     $id_duplicate = $stmnt->fetchAll(); 
-    if(len($id_duplicate) == 1){
+    if(!empty($id_duplicate)){
 
       $stmnt = $db->query($query);
       $stmnt -> execute();
