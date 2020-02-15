@@ -24,7 +24,7 @@ foreach ($users as $user){
   $id=$user['user_id'];
   $namep=$user['fname'];
 
-  echo("Meet <b>$namep</b>");
+  echo("<li>Meet <b>$namep</b></li>");
 }
 
 ?>
