@@ -27,7 +27,7 @@ require_once('db.php')
     $name=htmlspecialchars($_POST['name']);
     
     $email=htmlspecialchars($_POST['email']);
-    if (strpos($email,"@") !== false && (strpos($email,".") !== false && strpos($email,".") > strpos($email,"@")){
+    if (strpos($email,"@") !== false && (strpos($email,".") !== false && strpos($email,".") > strpos($email,"@"))){
       $query2 = "insert  into users (Character_id,Fname,Email) Values($id,'$name',$email);";
       $stmnt = $db->query($query2);
       $stmnt -> execute();
