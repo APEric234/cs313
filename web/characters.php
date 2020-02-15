@@ -47,7 +47,7 @@ foreach ($names as $name){
       $stmnt -> execute();
       $id_duplicate = $stmnt->fetchAll(); 
     }
-    $users_id=$_post['users_id']
+    $users_id=$_post['users_id'];
     $query = "select User_id from characters where User_id = $id;";
     if(len($id_duplicate) == 1){
 
