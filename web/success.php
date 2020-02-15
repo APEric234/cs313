@@ -3,7 +3,6 @@ require_once('db.php')
 ?>
 
 <?php
-  if(isset($_POST['addCharacter'])) { 
     $id=rand(0,1000);
     
     $query = "select Character_id from characters where Character_id = $id;";
@@ -57,6 +56,6 @@ require_once('db.php')
         </body></html>
         ';
     }
-  } 
+   
   
 ?> 
