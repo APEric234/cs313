@@ -1,5 +1,6 @@
 .hero {
   font-size: 30;
+  font-size: 8vw;
 }
 html { 
   background: url('images/yourimage.jpg') no-repeat center center fixed; 
@@ -40,4 +41,6 @@ li{
 
 *{
   color:red;
+  font-size: 12px;
+  font-size: 4vw;
 }
