@@ -12,15 +12,11 @@ html {
 }
 
 
-p {
-  display: flex;
 
-  align-items: center;
-}
 .stats
   {
     display: flex;
-    align-items: right;
+    align-self: center;
   }
 label{
   display: inline-block; 
@@ -29,7 +25,7 @@ label{
 form{
   width:400px; 
   margin: 0 auto;
-  align-items: left;
+  align-self: left;
   list-style-type: square;
 }
 h1{
@@ -38,7 +34,7 @@ h1{
 ul {
   width:400px; 
   margin: 0 auto;
-  align-items: left;
+  align-self: left;
   list-style-type: square;
 }
 
