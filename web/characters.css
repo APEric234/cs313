@@ -4,7 +4,12 @@
   background-color: royalblue;
   font-size: 30;
 }
-body {
+html { 
+  background: url('images/yourimage.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-color: gold;
   background-image:url("images/arthur-20clip-20art-dragon-2.png");
 }
