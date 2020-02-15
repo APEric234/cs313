@@ -1,0 +1,54 @@
+.hero {
+  text-align: center;
+  font-size: 30;
+  font-size: 4vw;
+}
+b{
+  text-align: center;
+  font-size: 40;
+  font-size: 6vw;
+}
+html { 
+  background-color: gold;
+}
+
+
+
+.stats
+  {
+    
+    display: flex;
+    align-self: center;
+  }
+label{
+  display: inline-block; 
+  width: 10%;
+}
+
+h1{
+  text-align: center;
+  margin-left:40%;
+  margin-right:40%;
+  display: flex;
+  align-items:center;
+  font-size: 40;
+  font-size: 6vw;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  list-style-type: none;
+}
+li{
+  widows:20%;
+  height:10%;
+}
+footer{
+  vertical-align: right;
+}
+*{
+  color:red;
+  font-size: 12px;
+  font-size: 2vw;
+}
