@@ -40,7 +40,7 @@ foreach ($names as $name){
     <input type="number" id="agil" name="agil" min="0" max="18" step="1" value="10">
     <label for="stre">Strength:</label>
     <input type="number" id="stre" name="stre" min="0" max="18" step="1" value="10">
-    <label for="wisd">WisdoM:</label>
+    <label for="wisd">Wisdom:</label>
     <input type="number" id="wisd" name="wisd" min="0" max="18" step="1" value="10">
     <label for="intel">Intelligence:</label>
     <input type="number" id="intel" name="intel" min="0" max="18" step="1" value="10">
