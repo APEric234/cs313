@@ -16,7 +16,7 @@ require_once('db.php')
       //note to self this will infinite loop once all 1000 are made need to fix later
       $id=rand();
       
-      $query = "select Character_id from characters where Character_id = $id;";
+      $query = "select User_id from users where User_id = $id;";
 
 
       $stmnt = $db->query($query);
@@ -28,13 +28,13 @@ require_once('db.php')
     
     $email=htmlspecialchars($_POST['email']);
     if (strpos($email,"@") !== false && (strpos($email,".") !== false && strpos($email,".") > strpos($email,"@"))){
-      $query2 = "insert  into users (Character_id,Fname,Email) Values($id,'$name',$email);";
+      $query2 = "insert  into users (User_id,Fname,Email) Values($id,'$name',$email);";
       $stmnt = $db->query($query2);
       $stmnt -> execute();
       echo "
         <html><body>
-        <b> Your hero $name has been added to the list of characters succesfully!<b>
-        <a href=\"characters.php\"> Click here to go back and see him on the list of hero's!</a>
+        <b> Your have been added as a user your id is $id please remember this so you can add a character later<b>
+        <a href=\"characters.php\"> Click here to go and get a hero added for your user!</a>
 
         </body></html>
       ";
@@ -45,8 +45,8 @@ require_once('db.php')
     else{
       echo "
         <html><body>
-        <b> Your hero $name couldn't be added to the list of characters due to an error with the user_id you gave<b>
-        <a href=\"characters.php\"> Click here to go back and try again</a>
+        <b> You couldn't be added as a user due to an invalid email<b>
+        <a href=\"users.php\"> Click here to go back and try again</a>
       
         </body></html>
         ";
