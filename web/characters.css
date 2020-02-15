@@ -1,8 +1,10 @@
 .hero {
+  text-align: center;
   font-size: 30;
   font-size: 4vw;
 }
 b{
+  text-align: center;
   font-size: 40;
   font-size: 6vw;
 }
@@ -20,6 +22,7 @@ html {
 
 .stats
   {
+    
     display: flex;
     align-self: center;
   }
@@ -29,6 +32,7 @@ label{
 }
 
 h1{
+  text-align: center;
   margin-left:40%;
   margin-right:40%;
   display: flex;
