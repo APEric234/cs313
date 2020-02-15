@@ -50,4 +50,5 @@ foreach ($names as $name){
     </br>
     <input type="submit" name="addCharacter" id="addCharacter">
 </body>
+<footer><a href="users"> Want to check what users are available?</a></footer>
 </html>
