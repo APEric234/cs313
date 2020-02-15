@@ -2,6 +2,10 @@
   font-size: 30;
   font-size: 4vw;
 }
+b{
+  font-size: 40;
+  font-size: 6vw;
+}
 html { 
   background: url('images/yourimage.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
