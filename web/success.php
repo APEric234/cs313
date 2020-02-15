@@ -24,7 +24,8 @@ require_once('db.php')
       $id_duplicate = $stmnt->fetchAll(); 
     }
 
-    $users_id=$_post['users_id'];
+    $users_id=$_POST['users_id'];
+
     $query = "select User_id from users where User_id = $users_id;";
     $stmnt = $db->query($query);
     $stmnt -> execute();
