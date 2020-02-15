@@ -19,13 +19,13 @@ label{
   width: 10%;
 }
 form{
-  width:300px; 
+  width:100px; 
   margin: 0 auto;
   align-items: left;
   list-style-type: square;
-}
+}l
 ul {
-  width:300px; 
+  width:100px; 
   margin: 0 auto;
   align-items: left;
   list-style-type: square;
