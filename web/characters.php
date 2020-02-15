@@ -22,8 +22,8 @@ $stmnt -> execute();
 $names = $stmnt->fetchAll();
 foreach ($names as $name){
   $namep=$name['fname'];
-  echo("<li class='hero'>The Epic <br/><br/>
-    <b>$namep</b> has entered the game </li>");
+  echo("<li class='hero'>The Epic 
+    <b>$namep</b> has entered the game </li><br/>");
 }
 
 ?>
