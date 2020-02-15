@@ -29,6 +29,8 @@ require_once('db.php')
     $email=htmlspecialchars($_POST['email']);
     if (strpos($email,"@") !== false && (strpos($email,".") !== false && strpos($email,".") > strpos($email,"@"))){
       print($id);
+      
+      try{
       $query2 = "insert  into users (User_id,Fname,Email) Values($id,'$name','$email');";
       $stmnt = $db->query($query2);
       $stmnt -> execute();
@@ -39,7 +41,17 @@ require_once('db.php')
 
         </body></html>
       ";
+      }catch{
+        echo "
+        <html><body>
+        <b> Your have already added as a user please refresh the page<b>
+        <a href=\"characters.php\"> Click here to go and get a hero added for your user!</a>
+
+        </body></html>
+      ";
+      }
     }
+
 
     
   
