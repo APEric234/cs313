@@ -6,7 +6,7 @@ class Shape:
   def get_area(self):
     pass
   def display(self):
-    print(f"{self.name} - {self.get_area()}")
+    print(f"{self.name} - {"{0:.2f}".format(self.get_area())}")
 
 class Circle(Shape):
   def __init__(self):
