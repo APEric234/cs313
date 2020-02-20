@@ -5,12 +5,14 @@ class Shape:
     self.name="Shape"
   def get_area(self):
     pass
+  def display(self):
+    print(f"{self.name} - {self.get_area()}")
 
 class Circle(Shape):
   def __init__(self):
     super().__init__()
     self.name="Circle"
-    self.radius="0"
+    self.radius=0
   def get_area(self):
     return 3.14*self.radius*self.radius
 
