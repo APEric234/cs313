@@ -1,14 +1,6 @@
-class Student:
-    def __init__():
-        id=0
-        first_name=""
-        last_name=""
 
-#accepts a student object
-def display_student( s):
-    print(f"{s.id} - {first_name} {last_name}")
 
-def loop_int(self)
+def loop_int():
     loop =True
     while loop:
         try:
