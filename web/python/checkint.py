@@ -8,6 +8,7 @@ def loop_int():
             number=int(number)
             print(f"The result is: {number}")
             loop=False
+            return number
         except:
             pass
         
