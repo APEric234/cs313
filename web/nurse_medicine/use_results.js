@@ -5,7 +5,7 @@ function search() {
   // Set up the parameters to send to the API
   var params =
     '?&apikey=78b2fe4b&s=' + encodeURIComponent(searchString);
-  var url = 'http://www.omdbapi.com/' + params;
+  var url = 'https://www.omdbapi.com/' + params;
   //call fetch with our url...remember that fetch returns a Promise
   //that must be processed with a call to the .then() method.
   fetch(url)
