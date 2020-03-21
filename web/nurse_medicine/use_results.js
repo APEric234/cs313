@@ -8,7 +8,7 @@ function search() {
   var url = 'https://www.omdbapi.com/' + params;
   //call fetch with our url...remember that fetch returns a Promise
   //that must be processed with a call to the .then() method.
-  console.log(process.env)
+  console.log(process.env);
   fetch(url)
     .then(function(response) {
       // fetch also returns a stream as the result...we have to tell it
