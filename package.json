@@ -1,0 +1,26 @@
+{
+  "name": "cs313-php",
+  "version": "1.0.0",
+  "description": "package for node",
+  "main": "index.js",
+  "scripts": {
+    "instil" : "npm install express --save",
+     "test": " \"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/APEric234/cs313.git"
+  },
+  "author": "Eric Allen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.9.8"
+  },
+  "bugs": {
+    "url": "https://github.com/APEric234/cs313/issues"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "homepage": "https://github.com/APEric234/cs313#readme"
+}
