@@ -41,22 +41,24 @@ class Velocity():
         self.dy=vy
 
     def setFromHypo(self,degrees,v_in):
-        
+        print(f"degrees is {degrees}")
         self.dx = self.dx+float(math.cos(math.radians(degrees)) * v_in)
         self.dy = self.dy+float(math.sin(math.radians(degrees)) * v_in)
         print(f"x {self.dx} y {self.dy} {degrees}")
 class Laser():
     radius=30
     vms = ASTEROID_SPEED
-    traveled=1200
+    traveled=600
     def __init__(self,x,y,angle,velocity):
         self.alive=True
         self.center=Point(x,y)
         self.velocity=velocity
-        self.velocity.dx =self.velocity.dx+10
-        self.velocity.dy =self.velocity.dy+10
-        self.vms=10 + math.sqrt(self.velocity.dx*self.velocity.dx + self.velocity.dy*self.velocity.dy)
-        self.velocity.setFromHypo(angle,self.vms)
+        self.absolute=(self.velocity.dx*self.velocity.dx) + (self.velocity.dy*self.velocity.dy)
+        self.absolute=math.sqrt(self.absolute)+10
+        print(f"absolute is {self.absolute}")
+        self.velocity.setFromHypo(angle,self.absolute)
+        #self.velocity.dx =self.velocity.dx
+        #self.velocity.dy =self.velocity.dy
         self.texture = arcade.load_texture(img_laser)
         self.radius=LARGE_RADIUS
         self.angle=angle
@@ -87,6 +89,7 @@ class Laser():
         self.center=Point(new_x,new_y)
         print(f" traveled {travel}")
         self.traveled= self.traveled-travel
+        print(f" remaining to {self.traveled}")
     def is_off_screen(self,s_width,s_height):
         if self.center.x > s_width:
             self.center.x = 0
@@ -98,7 +101,7 @@ class Laser():
             self.center.x = s_width-1
 class Asteroid():
 
-    base_speed=1.5
+    base_speed=.5
     def __init__(self):
         self.texture = arcade.load_texture(img_asteroid1)
         self.radius=LARGE_RADIUS
@@ -141,6 +144,20 @@ class Asteroid():
             self.center.y = s_height-1
         elif self.center.x < 0:
             self.center.x = s_width-1
+    def break_apart(self):
+        c = MediumAsteroid()
+        c.center=Point(self.center.x,self.center.y)
+        c.velocity = Velocity(self.velocity.dx,self.velocity.dy+.2)
+        d = MediumAsteroid()
+        d.center=Point(self.center.x,self.center.y)
+        d.velocity = Velocity(self.velocity.dx,self.velocity.dy-.2)
+        e = SmallAsteroid()
+        e.center=Point(self.center.x,self.center.y)
+        e.velocity = Velocity(self.velocity.dx+.5,self.velocity.dy-.2)
+        debris = [c,d,e]
+        
+        return debris
+        
     
     
 class SmallAsteroid(Asteroid):
@@ -151,6 +168,9 @@ class SmallAsteroid(Asteroid):
         self.height = self.texture.height
         self.rotation=5
         self.radius=2
+    def break_apart(self):
+        debris =[]
+        return debris
 class MediumAsteroid(Asteroid):
     def __init__(self):
         super().__init__()
@@ -159,7 +179,15 @@ class MediumAsteroid(Asteroid):
         self.height = self.texture.height
         self.rotation=-2
         self.radius=5
-        
+    def break_apart(self):
+        c = SmallAsteroid()
+        c.center=Point(self.center.x,self.center.y)
+        c.velocity = Velocity(self.velocity.dx+.5,self.velocity.dy+.5)
+        d = SmallAsteroid()
+        d.center=Point(self.center.x,self.center.y)
+        d.velocity = Velocity(self.velocity.dx-.5,self.velocity.dy-.5)
+        debris = [c,d]
+        return debris
 class Ship:
     """
     The ship is a rectangle that tracks the mouse.
@@ -228,6 +256,7 @@ class Game(arcade.Window):
         self.ship = Ship()
         arcade.set_background_color(arcade.color.WHITE)
         self.game_over=False
+        self.won=False
     def on_draw(self):
         """
         Called automatically by the arcade framework.
@@ -236,15 +265,31 @@ class Game(arcade.Window):
 
         # clear the screen to begin drawing
         arcade.start_render()
-    
-        if self.game_over:
+        if not self.first_update and len(self.asteroids)==0:
+            """
+            Draw "Game over" across the screen.
+            """
+            for lasers in self.lasers:
+                self.remove(lasers)
+            for ast in self.asteroids:
+                self.remove(ast)
+            output = "Cleared them ALL!!"
+            second_out = "Hit space to play again"
+            self.won=True
+            self.ship = Ship()
+            arcade.draw_text(output, (SCREEN_WIDTH/2)-250, SCREEN_HEIGHT/2, arcade.color.BLACK, 54)
+            arcade.draw_text(second_out, (SCREEN_WIDTH/2)-125, SCREEN_HEIGHT/3, arcade.color.BLACK, 24)
+        elif self.game_over:
             
             """
             Draw "Game over" across the screen.
             """
             output = "Game Over"
+            second_out = "Hit space to play again"
+            self.game_over=True
+            self.ship = Ship()
             arcade.draw_text(output, (SCREEN_WIDTH/2)-150, SCREEN_HEIGHT/2, arcade.color.BLACK, 54)
-            
+            arcade.draw_text(second_out, (SCREEN_WIDTH/2)-125, SCREEN_HEIGHT/3, arcade.color.BLACK, 24)
         else:
             #draw ship
             # draw each asteroid
@@ -255,7 +300,7 @@ class Game(arcade.Window):
                 asteroid.draw()
                 num_drawn=num_drawn+1
             # TODO: iterate through your lasers and draw them...
-            print(len(self.lasers))
+            #print(len(self.lasers))
             for laser in self.lasers:
                 if laser.traveled<0:
                     self.lasers.remove(laser)
@@ -270,9 +315,9 @@ class Game(arcade.Window):
         self.check_collisions()
         self.check_off_screen()
 
-        # decide if we should start a target
+        # decide if we should start a asteroid
         
-        while self.asteroid_count < 5 and self.first_update:
+        while self.asteroid_count < 3 and self.first_update:
             self.create_target()
             self.asteroid_count=self.asteroid_count+1
         self.first_update=False
@@ -299,13 +344,15 @@ class Game(arcade.Window):
         """
         print("called me2")
         b=Velocity(self.ship.velocity.dx,self.ship.velocity.dy)
+        angle_travel = math.tan((self.ship.velocity.dx*self.ship.velocity.dx)+(self.ship.velocity.dy*self.ship.velocity.dy))
+        
         laser= Laser(self.ship.center.x,self.ship.center.y,self.ship.angle+90,b)
         print("got y")
         #laser.fire(self.ship.angle)
         print("got x")
         self.lasers.append(laser)
         print("got z")
-        print(len(self.lasers))
+        #print(len(self.lasers))
         
         # TODO: Decide what type of target to create and append it to the list
 
@@ -318,44 +365,18 @@ class Game(arcade.Window):
         for asteroid in self.asteroids:
             diff_ship_x = asteroid.center.x - self.ship.center.x
             diff_ship_y = asteroid.center.y - self.ship.center.y
-            if abs(diff_ship_x) < self.ship.radius and abs(diff_ship_y) < self.ship.radius:
+            if abs(diff_ship_x) < self.ship.radius+35 and abs(diff_ship_y) < self.ship.radius+35:
                 self.game_over=True
             else:
                 for laser in self.lasers:
                     diff_x = asteroid.center.x - laser.center.x
                     diff_y = asteroid.center.y - laser.center.y
-                    if abs(diff_x) < asteroid.radius or abs(diff_y) < asteroid.radius:
-                        if isinstance(asteroid, MediumAsteroid):
-                            self.lasers.remove(laser)
-                            c = SmallAsteroid()
-                            c.center=Point(asteroid.center.x,asteroid.center.y)
-                            c.velocity = Velocity(asteroid.velocity.dx+1.5,asteroid.velocity.dy+1.5)
-                            d = SmallAsteroid()
-                            d.center=Point(asteroid.center.x,asteroid.center.y)
-                            d.velocity = Velocity(asteroid.velocity.dx-1.5,asteroid.velocity.dy-1.5)
-                            
-                            self.asteroids.append(c)
-                            self.asteroids.append(d)
-                            self.asteroids.remove(asteroid)
-                        elif isinstance(asteroid,SmallAsteroid):
+                    if abs(diff_x) < asteroid.radius+10 and abs(diff_y) < asteroid.radius+10:
                             self.lasers.remove(laser)
                             self.asteroids.remove(asteroid)
-                        else:
-                            self.lasers.remove(laser)
-                            c = MediumAsteroid()
-                            c.center=Point(asteroid.center.x,asteroid.center.y)
-                            c.velocity = Velocity(asteroid.velocity.dx,asteroid.velocity.dy+2)
-                            d = MediumAsteroid()
-                            d.center=Point(asteroid.center.x,asteroid.center.y)
-                            d.velocity = Velocity(asteroid.velocity.dx,asteroid.velocity.dy-2)
-                            e = SmallAsteroid()
-                            e.center=Point(asteroid.center.x,asteroid.center.y)
-                            e.velocity = Velocity(asteroid.velocity.dx+5,asteroid.velocity.dy-2)
-                            
-                            self.asteroids.append(c)
-                            self.asteroids.append(d)
-                            self.asteroids.append(e)
-                            self.asteroids.remove(asteroid)
+                            debris = asteroid.break_apart()
+                            for x in debris:
+                                self.asteroids.append(x)
                                 
         #do collision checking
         
@@ -389,35 +410,45 @@ class Game(arcade.Window):
      #   self.ship.angle = self._get_angle_degrees(x, y,self.ship.center.x,self.ship.center.y)
     def on_mouse_press(self, x: float, y: float, button: int, modifiers: int):
         # Fire!
-        angle = self.ship.angle
-        print("key pressed")
-        self.create_laser()
-        print("laser created")
+        if not self.won and not self.game_over:
+            angle = self.ship.angle
+            print("key pressed")
+            self.create_laser()
+            print("laser created")
     def on_key_press(self, key, modifiers):
         #move ship
-        increase = .2
-        if key == arcade.key.LEFT:
-            self.ship.keys.append(arcade.key.LEFT)
-        elif key == arcade.key.DOWN :
-            self.ship.keys.append(arcade.key.DOWN)
+        if not self.won and not self.game_over:
+            increase = .2
+            if key == arcade.key.LEFT:
+                self.ship.keys.append(arcade.key.LEFT)
+            elif key == arcade.key.DOWN :
+                self.ship.keys.append(arcade.key.DOWN)
 
-        elif key == arcade.key.RIGHT:
-            self.ship.keys.append(arcade.key.RIGHT)
-        elif key == arcade.key.UP:
-            self.ship.keys.append(arcade.key.UP)
-        """Called when the user releases a key. """
+            elif key == arcade.key.RIGHT:
+                self.ship.keys.append(arcade.key.RIGHT)
+            elif key == arcade.key.UP:
+                self.ship.keys.append(arcade.key.UP)
+        else:
+            if key == arcade.key.SPACE:
+                self.game_over=False
+                self.won=False
+                self.first_update=True
+                self.asteroid_count=0
+                self.asteroids=[]
+                self.lasers=[]
+            """Called when the user releases a key. """
     def on_key_release(self, key, modifiers):
         """Called when the user releases a key. """
+        if not self.won and not self.game_over:
+            if key == arcade.key.LEFT:
+                self.ship.keys.remove(arcade.key.LEFT)
+            elif key == arcade.key.DOWN :
+                self.ship.keys.remove(arcade.key.DOWN)
 
-        if key == arcade.key.LEFT:
-            self.ship.keys.remove(arcade.key.LEFT)
-        elif key == arcade.key.DOWN :
-            self.ship.keys.remove(arcade.key.DOWN)
-
-        elif key == arcade.key.RIGHT:
-            self.ship.keys.remove(arcade.key.RIGHT)
-        elif key == arcade.key.UP:
-            self.ship.keys.remove(arcade.key.UP)
+            elif key == arcade.key.RIGHT:
+                self.ship.keys.remove(arcade.key.RIGHT)
+            elif key == arcade.key.UP:
+                self.ship.keys.remove(arcade.key.UP)
     def _get_angle_degrees(self, x, y,x2,y2):
 
         """
